@@ -2,7 +2,6 @@
 
 @import "./media.css";
 
-
 *,
 *::before,
 *::after {
@@ -58,6 +57,10 @@ body {
   font-family: Poppins;
 }
 
+header {
+  display: none;
+}
+
 .container {
   display: flex;
 }
@@ -99,11 +102,7 @@ ul {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: -0.01em;
-  padding-left: 5px;
-  position: relative;
-  bottom: 6px;
-  left: 9px;
-  color:#838383;
+  color: #838383;
 }
 
 .logo {
@@ -120,6 +119,12 @@ ul {
 .logo__image {
   width: 37px;
   height: 37px;
+}
+
+.logo__box-span {
+  position: relative;
+  top: -5px;
+  left: 14px;
 }
 
 h1 {
@@ -142,15 +147,31 @@ h1 {
 }
 
 .side-menu__items li button {
-  width: 250px;
-  height: 46px;
+  width: 100%;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  padding: 0;
   border: none;
   background: transparent;
   cursor: pointer;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.14px;
+}
+
+.side-menu__items li button img {
+  margin: 11px;
+}
+
+.side-menu__items-button svg {
+  margin-left: auto;
+  margin-right: 11px;
+  stroke: #9197b3;
 }
 
 .side-menu__items li button h3 {
@@ -162,13 +183,9 @@ h1 {
 }
 
 .side-menu__items-button-box {
-  width: 116px;
+  width: 250px;
   display: flex;
   align-items: center;
-}
-
-.side-menu__items-button-svg {
-  stroke: #9197b3;
 }
 
 .active {
@@ -215,18 +232,11 @@ main {
   display: flex;
   justify-content: center;
   width: 100%;
-  background: #FAFBFF;
-}
-
-.main-wrapper {
-  width: 968px;
-  display: flex;
-  flex-direction: column;
+  background: #fafbff;
 }
 
 .main-wrapper__title {
-  margin-top: 40px;
-  margin-left: -4px;
+  margin: 40px 0 0 -4px;
 }
 
 .main-wrapper h2 {
@@ -236,8 +246,7 @@ main {
 }
 
 .product {
-  width: clamp(440px, 68vw, 968px);
-  max-width: 968px;
+  width: clamp(670px, 68vw, 968px);
   min-height: 812px;
   border-radius: 30px;
   background: #ffffff;
@@ -252,6 +261,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 30px;
+  margin-bottom: -5px;
 }
 
 .product__head-title h3 {
@@ -324,25 +334,18 @@ main {
 }
 
 .table-head__wrapper {
+  border-bottom: 1px solid #eeeeee;
   grid-template-columns:
-    minmax(150px, 1.3fr)
-    minmax(150px, 1.1fr)
-    minmax(150px, 1fr)
-    minmax(150px, 1.3fr)
-    minmax(150px, 1fr)
-    minmax(100px, 1fr);
+    minmax(120px, 208px) minmax(59px, 130px) minmax(110px, 156px)
+    minmax(139px, 208px) minmax(76px, 102px) minmax(86px, 164px);
 }
 
 .table-body {
   min-height: 535px;
-  padding: 0 30px;
+  padding: 0 38px;
   grid-template-columns:
-    minmax(150px, 1.7fr)
-    minmax(150px, 1fr)
-    minmax(150px, 1.4fr)
-    minmax(150px, 2fr)
-    minmax(150px, 1fr)
-    minmax(100px, 1.2fr);
+    minmax(110px, 170px) minmax(75px, 130px)
+    minmax(108px, 154px) minmax(160px, 210px) minmax(100px, 127px) minmax(80px, 100px);
 }
 
 thead,
@@ -351,9 +354,27 @@ tr {
   display: contents;
 }
 
-th,
-td {
-  padding: 15px;
+tbody tr td{
+  border-bottom: 1px solid #eeeeee;
+}
+
+tr th,
+tr td {
+  padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+  text-align: center;
+}
+
+td:last-child {
+  word-break: auto-phrase;
+  padding: 20px 0;
+}
+
+th {
+  padding: 15px 15px 10px 15px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -367,38 +388,20 @@ th {
   letter-spacing: -0.01em;
   text-align: left;
   color: #b5b7c0;
-  border-bottom: 1px solid #eeeeee;
 }
 
 td {
-  display: flex;
-  align-items: center;
   font-family: Poppins;
   font-size: 14px;
   font-weight: 500;
   line-height: 21px;
   letter-spacing: -0.01em;
   text-align: left;
-}
-
-tr th,
-tr td {
-  padding-left: 0;
-  border-bottom: 1px solid #eeeeee;
-}
-
-th:last-child,
-td:last-child {
-  text-align: center;
+  padding: 24px 0;
 }
 
 tr th:first-child {
-  padding-left: 30px;
-}
-
-tr td:last-child {
-  padding: 11px 0;
-  justify-content: flex-end;
+  padding-left: 38px;
 }
 
 .btn-table {
@@ -429,7 +432,7 @@ tr td:last-child {
 
 .product__footer {
   position: relative;
-  top: 30px;
+  top: 22px;
 }
 
 .product__footer-wrapper {
@@ -457,6 +460,9 @@ tr td:last-child {
   display: flex;
   justify-content: flex-end;
   padding-right: 30px;
+  position: relative;
+  right: 14px;
+  top: -1px;
 }
 
 .pagination__wrapper {
@@ -491,7 +497,6 @@ tr td:last-child {
 .pagination__wrapper ul li:nth-child(5) {
   background: none;
   border: none;
-  margin: 0 7px;
 }
 
 .pagination-active {
