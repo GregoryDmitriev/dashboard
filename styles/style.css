@@ -2,41 +2,6 @@
 
 @import "./media.css";
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-input[type="text"] {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  margin: 0;
-}
-
-ul[class] {
-  padding: 0;
-  list-style: none;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-menu,
-li {
-  margin: 0;
-  padding: 0;
-}
-
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
 img {
   max-width: 100%;
   display: block;
@@ -354,7 +319,7 @@ tr {
   display: contents;
 }
 
-tbody tr td{
+tbody tr td {
   border-bottom: 1px solid #eeeeee;
 }
 
